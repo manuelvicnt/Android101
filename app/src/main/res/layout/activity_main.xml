@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <android.support.design.widget.AppBarLayout android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
+            android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary" app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!--
+        This is the container and how our views are going to be organised.
+
+        Linear Layout : views are going to be organised in a linear way. We specify that
+        that way is vertical. And with gravity, we are forcing the view to be centered horizontally.
+
+        We create a margin to the top, to place the view under the Toolbar.
+    -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <!--
+            Hello World Text View
+            The value of @string/hello_world can be seen in the res/values/strings.xml file
+            That's where all the Strings of the app should be defined. In this way, if we want
+            to translate the app to different languages, we just have to translate that file.
+
+            With Gravity, we specify how is placed inside its bounds. Layout_width is match_parent
+            so the TextView width is going to be as large as the container, we center the text.
+
+            We can specify textColor and TextSize as well.
+
+            @color/whatever access to our colours file
+            @android:color/white access to the white colour defined by the system. Not ours.
+        -->
+        <TextView
+            android:id="@+id/hello_world"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hello_world_margin"
+            android:gravity="center"
+            android:textSize="@dimen/hello_world_text_size"
+            android:textColor="@android:color/holo_red_dark"
+            android:text="@string/hello_world"/>
+
+        <!--
+            Enter your name Edit Text
+
+            Single line is going to restrict the EditText to just have one line available when
+            typing.
+
+            The hint is the suggested text displayed when it's empty. That should explaining what's that
+            input for.
+        -->
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin"
+            android:singleLine="true"
+            android:hint="@string/enter_your_name"/>
+
+        <!--
+            Submit button
+
+            We can also change the background of the views
+        -->
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_light"
+            android:layout_margin="@dimen/default_margin"
+            android:text="@string/go"/>
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
