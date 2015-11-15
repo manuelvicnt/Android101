@@ -70,15 +70,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void handleOnClickOnSubmitButton() {
 
-        final Activity mainActivity = this;
-
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 String nameOnEditText = yourNameEditText.getText().toString();
 
-                Intent goToWelcomeScreen = new Intent(mainActivity, WelcomeActivity.class);
+                Intent goToWelcomeScreen = new Intent(MainActivity.this, WelcomeActivity.class);
                 goToWelcomeScreen.putExtra(WelcomeActivity.PASS_NAME_TO_WELCOME_ACTIVITY, nameOnEditText);
                 startActivity(goToWelcomeScreen);
             }
